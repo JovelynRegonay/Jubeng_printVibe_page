@@ -10,11 +10,80 @@ body {
     background-color: #f4f4f4;
 }
 
-header {
-    background: #4caf50; /* Sage green */
-    color: white;
-    padding: 20px 0;
-    text-align: center;
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    transition: All ease .5s;
+}
+
+.bg-dark {
+    background-color: rgba(178, 217, 178, 0.6);
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.navbar, .navbar-hidden {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    position: relative;
+    padding: 0 10px;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar-hidden {
+    display: none;
+}
+
+.navbar-logo {
+    width: 132px;
+}
+
+.navbar-menu {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-item {
+    list-style: none;
+}
+
+.navbar-item .divider{
+    display: inline-block;
+    width: 1px;
+    height: 16px;
+    background-color: #fff;
+}
+
+.navbar-item a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 800;
+    padding: 30px 23px;
+}
+
+.navbar-item:nth-last-child(-n+2) a {
+    color: #D8D8D8;
+}
+
+.navbar-item a:hover,.social-media li a:hover,.bottom-links li a:hover {
+    color: #1ed760;
 }
 
 .logo img {
