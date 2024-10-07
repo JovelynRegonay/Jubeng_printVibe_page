@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Elegant Printing Business</title>
+    <title>Jubeng's PrintVibe</title>
 </head>
 <body>
 <header class="header">
     <div class="container">
         <nav class="navbar">
             <a href="#">
-                <img class="navbar-logo" src="images/logo.jfif" />
+                <img class="navbar-logo" src="images/logoNoBg.png" />
             </a>
             <ul class="navbar-menu">
                 <li class="navbar-item">
-                    <a href="#">Premium</a>
+                    <a href="#">Services</a>
                 </li>
                 <li class="navbar-item">
                     <a href="#">Help</a>
@@ -33,11 +33,6 @@
                     <a href="#">Log In</a>
                 </li>
             </ul>
-            <button class="burger-menu">
-                <div class="bars"></div>
-                <div class="bars"></div>
-                <div class="bars"></div>
-            </button>
         </nav>
     </div>
 </header>
@@ -84,5 +79,38 @@
 <footer>
     <p>&copy; 2024 Printing Business. All rights reserved.</p>
 </footer>
+
+<script  type="application/javascript">
+    const doc = document;
+    const elem = doc.documentElement;
+    function runOnScroll() {
+        const header = doc.querySelector('.header');
+
+        if (elem.scrollTop > 40 && !header.classList.contains("bg-dark")) {
+            header.classList.add("bg-dark");
+        }
+
+        if (elem.scrollTop < 40 && header.classList.contains("bg-dark")) {
+            header.classList.remove("bg-dark");
+        }
+    }
+    window.addEventListener("scroll", runOnScroll);
+
+    //collapse
+    const collapseBtn = doc.querySelectorAll('#collapsebutton');
+    collapseBtn.forEach(btn => {
+        btn.addEventListener("click", function(){
+            const target = doc.querySelector(this.dataset.target);
+            const img = this.querySelector('img');
+            if(target.classList.contains("show")) {
+                target.classList.remove("show");
+                img.style.transform = 'rotate(90deg)';
+            } else {
+                target.classList.add("show");
+                img.style.transform = 'rotate(270deg)';
+            }
+        })
+    })
+</script>
 </body>
 </html>
